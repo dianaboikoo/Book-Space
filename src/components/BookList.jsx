@@ -1,37 +1,55 @@
-// src/components/Banner.jsx
+// src/components/BookList.jsx
 import React from 'react';
 
-function Banner() {
+function BookList({ title, books }) {
   return (
-    <div style={styles.banner}>
-      <img
-        src="https://example.com/banner.jpg" // Replace with your image URL
-        alt="Winter Collection"
-        style={styles.image}
-      />
-      <div style={styles.text}>
-        <h2>New <span style={{ color: 'red' }}>Winter</span> Book Collection</h2>
+    <div style={styles.container}>
+      <div style={styles.header}>
+        <h3>{title}</h3>
+        <a href="#" style={styles.moreLink}>More &gt;</a>
+      </div>
+      <div style={styles.bookList}>
+        {books.map((book, index) => (
+          <div key={index} style={styles.bookItem}>
+            <img src={book.cover} alt={book.title} style={styles.cover} />
+            <p style={styles.title}>{book.title}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
 const styles = {
-  banner: {
-    margin: '20px',
-    borderRadius: '10px',
-    overflow: 'hidden',
+  container: {
+    margin: '10px 20px',
   },
-  image: {
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  moreLink: {
+    fontSize: '0.8rem',
+    color: '#888',
+  },
+  bookList: {
+    display: 'flex',
+    gap: '10px',
+    overflowX: 'scroll',
+  },
+  bookItem: {
+    width: '100px',
+    textAlign: 'center',
+  },
+  cover: {
     width: '100%',
-    height: 'auto',
+    borderRadius: '5px',
   },
-  text: {
-    position: 'absolute',
-    top: '50%',
-    left: '10%',
-    color: '#333',
+  title: {
+    fontSize: '0.9rem',
+    marginTop: '5px',
   },
 };
 
-export default Banner;
+export default BookList;

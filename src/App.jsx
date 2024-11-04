@@ -1,33 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import React from 'react';
-import SearchBar from './components/SearchBar';
-import Banner from './components/Banner';
-import BookList from './components/BookList';
-import BottomNavBar from './components/BottomNavBar';
-import './styles.css';
-
+import AccountPage from "./pages/AccountPage";
+import CommunityPage from "./pages/CommunityPage";
+import HomePage from "./pages/HomePage";
+import StatisticsPage from "./pages/StatisticsPage";
 
 function App() {
- const books = [
-    { title: 'The Goldfinch', cover: 'https://example.com/goldfinch.jpg' },
-    { title: 'The Secret History', cover: 'https://example.com/secret-history.jpg' },
-    { title: 'Pride and Prejudice', cover: 'https://example.com/pride.jpg' },
-  ];
-
   return (
-    <div>
-      <SearchBar />
-      <Banner />
-      <h2 style={{ marginLeft: '20px' }}>Discover</h2>
-      <BookList title="Currently Reading" books={books} />
-      <BookList title="Recommended" books={books} />
-      <BookList title="Popular" books={books} />
-      <BottomNavBar />
-    </div>
-  )
+    <>
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/account" element={<AccountPage />} />
+          <Route path="/community" element={<CommunityPage />} />
+          <Route path="/statistics" element={<StatisticsPage />} />
+        </Routes>
+      </main>
+    </>
+  );
 }
 
-export default App
+export default App;

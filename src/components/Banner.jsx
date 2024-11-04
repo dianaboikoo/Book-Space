@@ -5,13 +5,11 @@ function Banner() {
   return (
     <div style={styles.banner}>
       <img
-        src="https://example.com/banner.jpg" // Replace with your image URL
+        src="https://bookspace-d5650-default-rtdb.firebaseio.com/books.json" // Replace with your image URL
         alt="Winter Collection"
         style={styles.image}
       />
-      <div style={styles.text}>
-        <h2>New <span style={{ color: 'red' }}>Winter</span> Book Collection</h2>
-      </div>
+    
     </div>
   );
 }
