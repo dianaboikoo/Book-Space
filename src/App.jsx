@@ -7,7 +7,17 @@ import SearchBar from './components/SearchBar';
 import Banner from './components/Banner';
 import BookList from './components/BookList';
 import BottomNavBar from './components/BottomNavBar';
-import './styles.css';
+import HeaderChat from './components/HeaderChat';
+import TabSwitcher from './components/TabSwitcher';
+import ChatList from './components/ChatList';
+import './styles.css'
+
+function App() {
+    // App code here
+}
+
+export default App;
+;
 
 
 function App() {
